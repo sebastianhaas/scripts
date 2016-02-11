@@ -14,6 +14,7 @@
 # https://codeship.com/documentation/continuous-integration/set-environment-variables/
 #
 # * TESTLODGE_RELEASE_BRANCH_PREFIX=release
+# * MOCHA_RESULT_JSON=mochaTestResults.json
 #
 # You can either add those here, or configure them on the environment tab of your
 # project settings.
@@ -22,11 +23,17 @@ TESTLODGE_EMAIL=${TESTLODGE_EMAIL:?'You need to configure the TESTLODGE_EMAIL en
 TESTLODGE_PASSWORD=${TESTLODGE_PASSWORD:?'You need to configure the TESTLODGE_PASSWORD environment variable!'}
 TESTLODGE_PROJECT=${TESTLODGE_PROJECT:?'You need to configure the TESTLODGE_PROJECT environment variable!'}
 
+
+# Advanced configuration
 TESTLODGE_RELEASE_BRANCH_PREFIX=${TESTLODGE_RELEASE_BRANCH_PREFIX:-"release"}
+MOCHA_RESULT_JSON=${MOCHA_RESULT_JSON:-"mochaTestResults.json"}
+
 
 # Constant values
 TESTLODGE_API_VERSION=${TESTLODGE_API_VERSION:-"v1"}
 TESTLODGE_BASE_URL=${TESTLODGE_BASE_URL:-"api.testlodge.com"}
+
+
 
 # Process arguments
 while getopts ":v" opt; do
